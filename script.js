@@ -150,3 +150,34 @@ if (pfPainel) {
     x0 = null;
   });
 }
+
+// Planos: abas à esquerda trocam a prévia do site à direita
+const tipos = [...document.querySelectorAll(".tipo")];
+if (tipos.length) {
+  const url = document.getElementById("pvUrl");
+  const ativar = (alvo, focar) => {
+    tipos.forEach((t) => {
+      const on = t === alvo;
+      t.classList.toggle("is-active", on);
+      const btn = t.querySelector(".tipo__btn");
+      btn.setAttribute("aria-selected", on ? "true" : "false");
+      btn.tabIndex = on ? 0 : -1;
+      t.querySelectorAll(".tipo__mais a").forEach((a) => (a.tabIndex = on ? 0 : -1));
+      const tela = document.getElementById(btn.getAttribute("aria-controls"));
+      tela.classList.toggle("is-active", on);
+      if (on) { url.textContent = tela.dataset.dominio; tela.scrollTop = 0; }
+    });
+    if (focar) alvo.querySelector(".tipo__btn").focus();
+  };
+  tipos.forEach((t, i) => {
+    const btn = t.querySelector(".tipo__btn");
+    btn.addEventListener("click", () => ativar(t));
+    btn.addEventListener("keydown", (e) => {
+      const passo = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (!passo) return;
+      e.preventDefault();
+      ativar(tipos[(i + passo + tipos.length) % tipos.length], true);
+    });
+  });
+  ativar(tipos[0]);
+}

@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 
   <!-- Dados para o Google (negócio local + perguntas frequentes) -->
   <script type="application/ld+json">
@@ -402,42 +402,105 @@
           <h2 class="title">Escolha o ideal para você</h2>
           <p class="desc">Escolha o formato que combina com o seu negócio e receba um orçamento sob medida, sem compromisso.</p>
         </header>
-        <div class="plan-grid">
-          <article class="plan">
-            <h3>Landing Page</h3>
-            <p class="plan__desc">Uma página para divulgar seu serviço e gerar contatos.</p>
-            <ul>
-              <li>1 página completa</li>
-              <li>Botão de WhatsApp</li>
-              <li>SEO básico</li>
-              <li>Responsivo</li>
-            </ul>
-            <a href="#" class="btn-line js-whats" data-msg="Olá! Quero um orçamento para o plano Landing Page." target="_blank" rel="noopener">Pedir orçamento</a>
-          </article>
-          <article class="plan plan--featured">
-            <span class="plan__badge">Mais escolhido</span>
-            <h3>Site Profissional</h3>
-            <p class="plan__desc">Site completo para empresas que querem passar confiança.</p>
-            <ul>
-              <li>Até 5 páginas</li>
-              <li>SEO completo + Google</li>
-              <li>Formulário e WhatsApp</li>
-              <li>Animações e design exclusivo</li>
-              <li>30 dias de suporte</li>
-            </ul>
-            <a href="#" class="btn-main btn-main--block js-whats" data-msg="Olá! Quero um orçamento para o plano Site Profissional." target="_blank" rel="noopener">Pedir orçamento</a>
-          </article>
-          <article class="plan">
-            <h3>Loja Virtual</h3>
-            <p class="plan__desc">Venda online com catálogo, carrinho e pagamento.</p>
-            <ul>
-              <li>Catálogo de produtos</li>
-              <li>Pix e cartão</li>
-              <li>Painel para gerenciar</li>
-              <li>Treinamento de uso</li>
-            </ul>
-            <a href="#" class="btn-line js-whats" data-msg="Olá! Quero um orçamento para uma Loja Virtual." target="_blank" rel="noopener">Pedir orçamento</a>
-          </article>
+
+        <div class="tipos">
+          <div class="tipos__lista" role="tablist" aria-label="Tipos de site">
+            <div class="tipo is-active" data-tipo="landing">
+              <button class="tipo__btn" role="tab" id="aba-landing" aria-controls="tela-landing" aria-selected="true">
+                <span class="tipo__nome">Landing page</span>
+                <span class="tipo__sub">Uma página para vender um serviço</span>
+              </button>
+              <div class="tipo__mais"><div class="tipo__in">
+                <p>Uma página direta ao ponto, feita para anúncios e para gerar contatos no WhatsApp.</p>
+                <ul><li>1 página completa</li><li>Botão de WhatsApp</li><li>SEO básico</li><li>Responsivo</li></ul>
+                <a href="#" class="btn-main btn-main--sm js-whats" data-msg="Olá! Quero um orçamento para uma Landing page." target="_blank" rel="noopener">Pedir orçamento</a></div>
+              </div>
+            </div>
+            <div class="tipo" data-tipo="institucional">
+              <button class="tipo__btn" role="tab" id="aba-institucional" aria-controls="tela-institucional" aria-selected="false">
+                <span class="tipo__nome">Site institucional<span class="tipo__badge">Mais escolhido</span></span>
+                <span class="tipo__sub">Empresa, serviços e contato</span>
+              </button>
+              <div class="tipo__mais"><div class="tipo__in">
+                <p>Site completo para empresas que querem passar confiança e aparecer no Google.</p>
+                <ul><li>Até 5 páginas</li><li>SEO completo + Google</li><li>Formulário e WhatsApp</li><li>Design exclusivo</li><li>30 dias de suporte</li></ul>
+                <a href="#" class="btn-main btn-main--sm js-whats" data-msg="Olá! Quero um orçamento para um Site institucional." target="_blank" rel="noopener">Pedir orçamento</a></div>
+              </div>
+            </div>
+            <div class="tipo" data-tipo="loja">
+              <button class="tipo__btn" role="tab" id="aba-loja" aria-controls="tela-loja" aria-selected="false">
+                <span class="tipo__nome">Loja virtual</span>
+                <span class="tipo__sub">Catálogo, carrinho e pagamento</span>
+              </button>
+              <div class="tipo__mais"><div class="tipo__in">
+                <p>Venda online com seus produtos, carrinho e pagamento por Pix ou cartão.</p>
+                <ul><li>Catálogo de produtos</li><li>Pix e cartão</li><li>Painel para gerenciar</li><li>Treinamento de uso</li></ul>
+                <a href="#" class="btn-main btn-main--sm js-whats" data-msg="Olá! Quero um orçamento para uma Loja virtual." target="_blank" rel="noopener">Pedir orçamento</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pv">
+            <div class="pv-janela">
+              <div class="pv-bar">
+                <span class="pv-dots"><i></i><i></i><i></i></span>
+                <span class="pv-url" id="pvUrl">universoagvsalvador.com.br</span>
+                <span class="pv-dica">Role para ver a página</span>
+              </div>
+              <div class="pv-telas">
+              <div class="pv-tela is-active" role="tabpanel" id="tela-landing" aria-labelledby="aba-landing" data-dominio="universoagvsalvador.com.br" tabindex="0">
+                <img src="projetos/agv.webp" alt="Exemplo de landing page: site Universo AGV Salvador" width="700" height="1845" loading="lazy">
+              </div>
+              <div class="pv-tela" role="tabpanel" id="tela-institucional" aria-labelledby="aba-institucional" data-dominio="trackercarsat.com.br" tabindex="0">
+                <img src="projetos/tracker.webp" alt="Exemplo de site institucional: site Tracker Carsat" width="700" height="1845" loading="lazy">
+              </div>
+              <div class="pv-tela" role="tabpanel" id="tela-loja" aria-labelledby="aba-loja" data-dominio="sualoja.com.br" tabindex="0">
+                <div class="demo-loja" aria-label="Exemplo de loja virtual">
+                  <div class="demo-nav"><b>Sua Loja</b><span>Início</span><span>Produtos</span><span>Contato</span><em><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12zM6 6 5 3H2"/></svg><i>2</i></em></div>
+                  <div class="demo-hero">
+                    <small>Coleção de verão</small>
+                    <strong>Estilo para os dias de sol em Salvador</strong>
+                    <p>Frete grátis acima de R$ 199 e desconto no Pix.</p>
+                    <span class="demo-btn">Ver produtos</span>
+                  </div>
+                  <div class="demo-sec"><b>Mais vendidos</b><span>Ver todos</span></div>
+                  <div class="demo-grid">
+                    <div class="demo-prod">
+                      <span class="demo-prod__img" style="--g:linear-gradient(135deg,#2f6fe0,#5aa9ff)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 4 6l2 4 2-1v12h8V9l2 1 2-4-4-3-2 2h-4z"/></svg></span>
+                      <b>Camisa linho</b><span>R$ 129,90</span><i>Comprar</i>
+                    </div>
+                    <div class="demo-prod">
+                      <span class="demo-prod__img" style="--g:linear-gradient(135deg,#e08a2f,#ffc35a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h14l-1 11H6zM9 9V7a3 3 0 0 1 6 0v2"/></svg></span>
+                      <b>Bolsa de praia</b><span>R$ 89,90</span><i>Comprar</i>
+                    </div>
+                    <div class="demo-prod">
+                      <span class="demo-prod__img" style="--g:linear-gradient(135deg,#1f9d6b,#5ee0a5)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16c4 0 6-5 8-5l3 3h4c2 0 3 1 3 3v1H3z"/></svg></span>
+                      <b>Tênis casual</b><span>R$ 219,90</span><i>Comprar</i>
+                    </div>
+                    <div class="demo-prod">
+                      <span class="demo-prod__img" style="--g:linear-gradient(135deg,#b03ad6,#e08aff)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0zM12 7v-2M20 15h2"/></svg></span>
+                      <b>Boné</b><span>R$ 59,90</span><i>Comprar</i>
+                    </div>
+                    <div class="demo-prod">
+                      <span class="demo-prod__img" style="--g:linear-gradient(135deg,#d6363a,#ff8a8e)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h18M6 11a3 3 0 1 0 6 0M12 11a3 3 0 1 0 6 0"/></svg></span>
+                      <b>Óculos de sol</b><span>R$ 149,90</span><i>Comprar</i>
+                    </div>
+                    <div class="demo-prod">
+                      <span class="demo-prod__img" style="--g:linear-gradient(135deg,#3a4fd6,#8a9eff)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l2 2M8 4h8M8 20h8M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12"/></svg></span>
+                      <b>Relógio</b><span>R$ 199,90</span><i>Comprar</i>
+                    </div>
+                  </div>
+                  <div class="demo-pay">
+                    <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10H4zM4 11h16"/></svg>Cartão em até 6x</span>
+                    <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l6 6-6 6M12 6l6 6-6 6"/></svg>Pix com desconto</span>
+                    <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/></svg>Entrega rápida</span>
+                  </div>
+                  <div class="demo-foot">© Sua Loja · Exemplo de loja virtual</div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -562,6 +625,6 @@
     </symbol>
   </svg>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
